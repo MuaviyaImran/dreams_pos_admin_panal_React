@@ -74,19 +74,11 @@ const RightSideBar = () => {
           </li>
 
           <li className="sidebar-icons">
-            <Link
-              to="https://themeforest.net/item/dreamspos-pos-inventory-management-admin-dashboard-template/38834413"
-              target="_blank"
-              data-bs-toggle="tooltip"
-              data-bs-placement="left"
-              data-bs-original-title="Tooltip on left"
-            >
-              <ImageWithBasePath
-                src={sidebar_icon_03}
-                className="feather-five"
-                alt=""
-              />
-            </Link>
+            <ImageWithBasePath
+              src={sidebar_icon_03}
+              className="feather-five"
+              alt=""
+            />
           </li>
         </ul>
       </div>
@@ -171,12 +163,7 @@ const RightSideBar = () => {
                     <div className="status-toggle d-flex align-items-center me-2">
                       <input type="checkbox" id={1} className="check" />
                       <label htmlFor={1} className="checktoggle">
-                        <Link
-                          to="https://dreamspos.dreamguystech.com/react/template-rtl/dashboard"
-                          className="layout-link"
-                        >
-                          checkbox
-                        </Link>{" "}
+                        checkbox
                       </label>
                     </div>
                     <span className="status-text">RTL</span>

@@ -167,7 +167,7 @@ const Audiocall = () => {
                               <div className="chat-avatar">
                                 <ImageWithBasePath
                                   src="assets/img/users/user-01.jpg"
-                                  className="dreams_chat"
+                                  className="theme_chat"
                                   alt="image"
                                 />
                               </div>
@@ -197,7 +197,7 @@ const Audiocall = () => {
                               <div className="chat-avatar">
                                 <ImageWithBasePath
                                   src="assets/img/users/user-02.jpg"
-                                  className=" dreams_chat"
+                                  className=" theme_chat"
                                   alt="image"
                                 />
                               </div>
@@ -206,7 +206,7 @@ const Audiocall = () => {
                               <div className="chat-avatar">
                                 <ImageWithBasePath
                                   src="assets/img/users/user-01.jpg"
-                                  className=" dreams_chat"
+                                  className=" theme_chat"
                                   alt="image"
                                 />
                               </div>
@@ -223,7 +223,7 @@ const Audiocall = () => {
                               <div className="chat-avatar">
                                 <ImageWithBasePath
                                   src="assets/img/users/user-01.jpg"
-                                  className=" dreams_chat"
+                                  className=" theme_chat"
                                   alt="image"
                                 />
                               </div>
@@ -240,7 +240,7 @@ const Audiocall = () => {
                               <div className="chat-avatar">
                                 <ImageWithBasePath
                                   src="assets/img/users/user-01.jpg"
-                                  className=" dreams_chat"
+                                  className=" theme_chat"
                                   alt="image"
                                 />
                               </div>
@@ -260,7 +260,7 @@ const Audiocall = () => {
                               <div className="chat-avatar">
                                 <ImageWithBasePath
                                   src="assets/img/users/user-01.jpg"
-                                  className=" dreams_chat"
+                                  className=" theme_chat"
                                   alt="image"
                                 />
                               </div>
@@ -277,7 +277,7 @@ const Audiocall = () => {
                               <div className="chat-avatar">
                                 <ImageWithBasePath
                                   src="assets/img/users/user-01.jpg"
-                                  className=" dreams_chat"
+                                  className=" theme_chat"
                                   alt="image"
                                 />
                               </div>
@@ -307,7 +307,7 @@ const Audiocall = () => {
                               <div className="chat-avatar">
                                 <ImageWithBasePath
                                   src="assets/img/users/user-02.jpg"
-                                  className="dreams_chat"
+                                  className="theme_chat"
                                   alt="image"
                                 />
                               </div>
@@ -316,7 +316,7 @@ const Audiocall = () => {
                               <div className="chat-avatar">
                                 <ImageWithBasePath
                                   src="assets/img/users/user-01.jpg"
-                                  className=" dreams_chat"
+                                  className=" theme_chat"
                                   alt="image"
                                 />
                               </div>

@@ -638,7 +638,7 @@ const chat = () => {
                         <div className="chat-avatar">
                           <ImageWithBasePath
                             src="assets/img/avatar/avatar-2.jpg"
-                            className="rounded-circle dreams_chat"
+                            className="rounded-circle theme_chat"
                             alt="image"
                           />
                         </div>
@@ -963,7 +963,7 @@ const chat = () => {
                         <div className="chat-avatar">
                           <ImageWithBasePath
                             src="assets/img/avatar/avatar-10.jpg"
-                            className="rounded-circle dreams_chat"
+                            className="rounded-circle theme_chat"
                             alt="image"
                           />
                         </div>
@@ -972,7 +972,7 @@ const chat = () => {
                         <div className="chat-avatar">
                           <ImageWithBasePath
                             src="assets/img/avatar/avatar-2.jpg"
-                            className="rounded-circle dreams_chat"
+                            className="rounded-circle theme_chat"
                             alt="image"
                           />
                         </div>
@@ -1328,7 +1328,7 @@ const chat = () => {
                         <div className="chat-avatar">
                           <ImageWithBasePath
                             src="assets/img/avatar/avatar-10.jpg"
-                            className="rounded-circle dreams_chat"
+                            className="rounded-circle theme_chat"
                             alt="image"
                           />
                         </div>
@@ -1337,7 +1337,7 @@ const chat = () => {
                         <div className="chat-avatar">
                           <ImageWithBasePath
                             src="assets/img/avatar/avatar-2.jpg"
-                            className="rounded-circle dreams_chat"
+                            className="rounded-circle theme_chat"
                             alt="image"
                           />
                         </div>
@@ -1538,7 +1538,7 @@ const chat = () => {
                         <div className="chat-avatar">
                           <ImageWithBasePath
                             src="assets/img/avatar/avatar-2.jpg"
-                            className="rounded-circle dreams_chat"
+                            className="rounded-circle theme_chat"
                             alt="image"
                           />
                         </div>
@@ -1693,7 +1693,7 @@ const chat = () => {
                         <div className="chat-avatar">
                           <ImageWithBasePath
                             src="assets/img/avatar/avatar-2.jpg"
-                            className="rounded-circle dreams_chat"
+                            className="rounded-circle theme_chat"
                             alt="image"
                           />
                         </div>
@@ -1707,7 +1707,7 @@ const chat = () => {
                         <div className="chat-avatar">
                           <ImageWithBasePath
                             src="assets/img/avatar/avatar-2.jpg"
-                            className="rounded-circle dreams_chat"
+                            className="rounded-circle theme_chat"
                             alt="image"
                           />
                         </div>

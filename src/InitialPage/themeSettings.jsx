@@ -259,15 +259,10 @@ const ThemeSettings = () => {
                                 defaultValue="rtl"
                               />
                               <label htmlFor="rtl" className="checktoggles">
-                                <Link
-                                  to="https://dreamspos.dreamstechnologies.com/react/template-rtl/"
-                                  target="_blank"
-                                >
-                                  <ImageWithBasePath
-                                    src="assets/img/theme/theme-img-03.jpg"
-                                    alt
-                                  />
-                                </Link>
+                                <ImageWithBasePath
+                                  src="assets/img/theme/theme-img-03.jpg"
+                                  alt
+                                />
                                 <span className="theme-name">RTL</span>
                               </label>
                             </div>
