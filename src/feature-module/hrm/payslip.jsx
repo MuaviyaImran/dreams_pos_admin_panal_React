@@ -51,7 +51,7 @@ const Payslip = () => {
                           <div className="payslip-month d-flex">
                             <div className="slip-logo">
                               <ImageWithBasePath
-                                src="assets/img/logo-small.png"
+                                src="assets/img/logo-small.svg"
                                 alt="Logo"
                               />
                             </div>

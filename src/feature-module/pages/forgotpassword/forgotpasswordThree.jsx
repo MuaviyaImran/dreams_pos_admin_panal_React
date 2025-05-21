@@ -12,9 +12,9 @@ const ForgotpasswordThree = () => {
           <div className="container">
             <div className="login-content user-login">
               <div className="login-logo">
-                <ImageWithBasePath src="assets/img/logo.png" alt="img" />
+                <ImageWithBasePath src="assets/img/logo.svg" alt="img" />
                 <Link to={route.dashboard} className="login-logo logo-white">
-                  <ImageWithBasePath src="assets/img/logo-white.png" alt />
+                  <ImageWithBasePath src="assets/img/logo-white.svg" alt />
                 </Link>
               </div>
               <form action="signin-3">

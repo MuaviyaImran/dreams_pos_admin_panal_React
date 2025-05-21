@@ -13,10 +13,10 @@ const ForgotpasswordTwo = () => {
             <form>
               <div className="login-userset">
                 <div className="login-logo logo-normal">
-                  <ImageWithBasePath src="assets/img/logo.png" alt="img" />
+                  <ImageWithBasePath src="assets/img/logo.svg" alt="img" />
                 </div>
                 <Link to={route.dashboard} className="login-logo logo-white">
-                  <ImageWithBasePath src="assets/img/logo-white.png" alt />
+                  <ImageWithBasePath src="assets/img/logo-white.svg" alt />
                 </Link>
                 <div className="login-userheading">
                   <h3>Forgot password?</h3>

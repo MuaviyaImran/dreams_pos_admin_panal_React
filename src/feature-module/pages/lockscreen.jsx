@@ -11,7 +11,7 @@ const Lockscreen = () => {
         <div className="container">
           <ImageWithBasePath
             className="img-fluid logo-dark mb-5"
-            src="assets/img/logo.png"
+            src="assets/img/logo.svg"
             alt="Logo"
           />
           <div className="loginbox">

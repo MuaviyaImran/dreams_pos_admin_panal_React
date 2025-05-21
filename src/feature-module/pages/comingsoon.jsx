@@ -23,7 +23,7 @@ const Comingsoon = () => {
       <div className="comming-soon-pg w-100">
         <div className="coming-soon-box">
           <div className="pos-logo">
-            <ImageWithBasePath src="assets/img/logo-small.png" alt />
+            <ImageWithBasePath src="assets/img/logo-small.svg" alt />
           </div>
           <span>Our Website is</span>
           <h1>
@@ -47,9 +47,8 @@ const Comingsoon = () => {
             </li>
             <li className="seperate-dot">:</li>
             <li>
-            <span className="seconds">{formatTime(seconds)}</span>Sec
-          </li>
-    
+              <span className="seconds">{formatTime(seconds)}</span>Sec
+            </li>
           </ul>
           <div className="subscribe-form">
             <div className="mb-3">

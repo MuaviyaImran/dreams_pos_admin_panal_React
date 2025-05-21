@@ -13,11 +13,11 @@ const EmailverificationTwo = () => {
             <div className="login-userset">
               <div className="login-userset">
                 <div className="login-logo logo-normal">
-                  <ImageWithBasePath src="assets/img/logo.png" alt="img" />
+                  <ImageWithBasePath src="assets/img/logo.svg" alt="img" />
                 </div>
               </div>
               <Link to={route.dashboard} className="login-logo logo-white">
-                <ImageWithBasePath src="assets/img/logo-white.png" alt />
+                <ImageWithBasePath src="assets/img/logo-white.svg" alt />
               </Link>
               <div className="login-userheading text-center">
                 <h3>Verify Your Email</h3>

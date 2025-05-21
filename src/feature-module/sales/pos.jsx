@@ -1,66 +1,76 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
-import ImageWithBasePath from '../../core/img/imagewithbasebath'
-import { RefreshCcw, RotateCw, ShoppingCart } from 'feather-icons-react/build/IconComponents'
-import { Check, CheckCircle, Edit, MoreVertical, Trash2, UserPlus } from 'react-feather'
-import Select from 'react-select'
-import PlusCircle from 'feather-icons-react/build/IconComponents/PlusCircle'
-import MinusCircle from 'feather-icons-react/build/IconComponents/MinusCircle'
-import { OverlayTrigger, Tooltip } from 'react-bootstrap'
-import withReactContent from 'sweetalert2-react-content'
-import Swal from 'sweetalert2'
-import Slider from 'react-slick'
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import ImageWithBasePath from "../../core/img/imagewithbasebath";
+import {
+  RefreshCcw,
+  RotateCw,
+  ShoppingCart,
+} from "feather-icons-react/build/IconComponents";
+import {
+  Check,
+  CheckCircle,
+  Edit,
+  MoreVertical,
+  Trash2,
+  UserPlus,
+} from "react-feather";
+import Select from "react-select";
+import PlusCircle from "feather-icons-react/build/IconComponents/PlusCircle";
+import MinusCircle from "feather-icons-react/build/IconComponents/MinusCircle";
+import { OverlayTrigger, Tooltip } from "react-bootstrap";
+import withReactContent from "sweetalert2-react-content";
+import Swal from "sweetalert2";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const Pos = () => {
   const customers = [
-    { value: 'walkInCustomer', label: 'Walk in Customer' },
-    { value: 'john', label: 'John' },
-    { value: 'smith', label: 'Smith' },
-    { value: 'ana', label: 'Ana' },
-    { value: 'elza', label: 'Elza' },
+    { value: "walkInCustomer", label: "Walk in Customer" },
+    { value: "john", label: "John" },
+    { value: "smith", label: "Smith" },
+    { value: "ana", label: "Ana" },
+    { value: "elza", label: "Elza" },
   ];
   const products = [
-    { value: 'walkInCustomer', label: 'Walk in Customer' },
-    { value: 'john', label: 'John' },
-    { value: 'smith', label: 'Smith' },
-    { value: 'ana', label: 'Ana' },
-    { value: 'elza', label: 'Elza' },
+    { value: "walkInCustomer", label: "Walk in Customer" },
+    { value: "john", label: "John" },
+    { value: "smith", label: "Smith" },
+    { value: "ana", label: "Ana" },
+    { value: "elza", label: "Elza" },
   ];
   const gst = [
-    { value: '5', label: 'GST 5%' },
-    { value: '10', label: 'GST 10%' },
-    { value: '15', label: 'GST 15%' },
-    { value: '20', label: 'GST 20%' },
-    { value: '25', label: 'GST 25%' },
-    { value: '30', label: 'GST 30%' },
+    { value: "5", label: "GST 5%" },
+    { value: "10", label: "GST 10%" },
+    { value: "15", label: "GST 15%" },
+    { value: "20", label: "GST 20%" },
+    { value: "25", label: "GST 25%" },
+    { value: "30", label: "GST 30%" },
   ];
   const shipping = [
-    { value: '15', label: '15' },
-    { value: '20', label: '20' },
-    { value: '25', label: '25' },
-    { value: '30', label: '30' },
+    { value: "15", label: "15" },
+    { value: "20", label: "20" },
+    { value: "25", label: "25" },
+    { value: "30", label: "30" },
   ];
   const discount = [
-    { value: '10', label: '10%' },
-    { value: '15', label: '15%' },
-    { value: '20', label: '20%' },
-    { value: '25', label: '25%' },
-    { value: '30', label: '30%' },
+    { value: "10", label: "10%" },
+    { value: "15", label: "15%" },
+    { value: "20", label: "20%" },
+    { value: "25", label: "25%" },
+    { value: "30", label: "30%" },
   ];
   const tax = [
-    { value: 'exclusive', label: 'Exclusive' },
-    { value: 'inclusive', label: 'Inclusive' },
+    { value: "exclusive", label: "Exclusive" },
+    { value: "inclusive", label: "Inclusive" },
   ];
   const discounttype = [
-    { value: 'percentage', label: 'Percentage' },
-    { value: 'earlyPaymentDiscounts', label: 'Early payment discounts' },
+    { value: "percentage", label: "Percentage" },
+    { value: "earlyPaymentDiscounts", label: "Early payment discounts" },
   ];
   const units = [
-    { value: 'kilogram', label: 'Kilogram' },
-    { value: 'grams', label: 'Grams' },
+    { value: "kilogram", label: "Kilogram" },
+    { value: "grams", label: "Grams" },
   ];
   const [quantity, setQuantity] = useState(4);
 
@@ -106,7 +116,6 @@ const Pos = () => {
     setQuantity3(quantity3 + 1);
   };
 
-
   const renderTooltip = (props) => (
     <Tooltip id="pdf-tooltip" {...props}>
       Pdf
@@ -127,7 +136,7 @@ const Pos = () => {
     dots: false,
     autoplay: false,
     slidesToShow: 5,
-    margin:0,
+    margin: 0,
     speed: 500,
     responsive: [
       {
@@ -160,29 +169,27 @@ const Pos = () => {
 
   const showConfirmationAlert = () => {
     MySwal.fire({
-      title: 'Are you sure?',
-      text: 'You won\'t be able to revert this!',
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
       showCancelButton: true,
-      confirmButtonColor: '#00ff00',
-      confirmButtonText: 'Yes, delete it!',
-      cancelButtonColor: '#ff0000',
-      cancelButtonText: 'Cancel',
+      confirmButtonColor: "#00ff00",
+      confirmButtonText: "Yes, delete it!",
+      cancelButtonColor: "#ff0000",
+      cancelButtonText: "Cancel",
     }).then((result) => {
       if (result.isConfirmed) {
-
         MySwal.fire({
-          title: 'Deleted!',
-          text: 'Your file has been deleted.',
+          title: "Deleted!",
+          text: "Your file has been deleted.",
           className: "btn btn-success",
-          confirmButtonText: 'OK',
+          confirmButtonText: "OK",
           customClass: {
-            confirmButton: 'btn btn-success',
+            confirmButton: "btn btn-success",
           },
         });
       } else {
         MySwal.close();
       }
-
     });
   };
   return (
@@ -224,116 +231,155 @@ const Pos = () => {
               <div className="pos-categories tabs_wrapper">
                 <h5>Categories</h5>
                 <p>Select From Below Categories</p>
-                <Slider {...settings} className='tabs owl-carousel pos-category'>
-                  <div id="all" className='pos-slick-item'>
+                <Slider
+                  {...settings}
+                  className="tabs owl-carousel pos-category"
+                >
+                  <div id="all" className="pos-slick-item">
                     <Link to="#">
-                      <ImageWithBasePath src="assets/img/categories/category-01.png" alt="Categories" />
+                      <ImageWithBasePath
+                        src="assets/img/categories/category-01.png"
+                        alt="Categories"
+                      />
                     </Link>
                     <h6>
                       <Link to="#">All Categories</Link>
                     </h6>
                     <span>80 Items</span>
                   </div>
-                  <div id="headphones" className='pos-slick-item'>
+                  <div id="headphones" className="pos-slick-item">
                     <Link to="#">
-                      <ImageWithBasePath src="assets/img/categories/category-02.png" alt="Categories" />
+                      <ImageWithBasePath
+                        src="assets/img/categories/category-02.png"
+                        alt="Categories"
+                      />
                     </Link>
                     <h6>
                       <Link to="#">Headphones</Link>
                     </h6>
                     <span>4 Items</span>
                   </div>
-                  <div id="shoes" className='pos-slick-item'>
+                  <div id="shoes" className="pos-slick-item">
                     <Link to="#">
-                      <ImageWithBasePath src="assets/img/categories/category-03.png" alt="Categories" />
+                      <ImageWithBasePath
+                        src="assets/img/categories/category-03.png"
+                        alt="Categories"
+                      />
                     </Link>
                     <h6>
                       <Link to="#">Shoes</Link>
                     </h6>
                     <span>14 Items</span>
                   </div>
-                  <div id="mobiles" className='pos-slick-item'>
+                  <div id="mobiles" className="pos-slick-item">
                     <Link to="#">
-                      <ImageWithBasePath src="assets/img/categories/category-04.png" alt="Categories" />
+                      <ImageWithBasePath
+                        src="assets/img/categories/category-04.png"
+                        alt="Categories"
+                      />
                     </Link>
                     <h6>
                       <Link to="#">Mobiles</Link>
                     </h6>
                     <span>7 Items</span>
                   </div>
-                  <div id="watches" className='pos-slick-item'>
+                  <div id="watches" className="pos-slick-item">
                     <Link to="#">
-                      <ImageWithBasePath src="assets/img/categories/category-05.png" alt="Categories" />
+                      <ImageWithBasePath
+                        src="assets/img/categories/category-05.png"
+                        alt="Categories"
+                      />
                     </Link>
                     <h6>
                       <Link to="#">Watches</Link>
                     </h6>
                     <span>16 Items</span>
                   </div>
-                  <div id="laptops" className='pos-slick-item'>
+                  <div id="laptops" className="pos-slick-item">
                     <Link to="#">
-                      <ImageWithBasePath src="assets/img/categories/category-06.png" alt="Categories" />
+                      <ImageWithBasePath
+                        src="assets/img/categories/category-06.png"
+                        alt="Categories"
+                      />
                     </Link>
                     <h6>
                       <Link to="#">Laptops</Link>
                     </h6>
                     <span>18 Items</span>
                   </div>
-                  <div id="allcategory" className='pos-slick-item'>
+                  <div id="allcategory" className="pos-slick-item">
                     <Link to="#">
-                      <ImageWithBasePath src="assets/img/categories/category-01.png" alt="Categories" />
+                      <ImageWithBasePath
+                        src="assets/img/categories/category-01.png"
+                        alt="Categories"
+                      />
                     </Link>
                     <h6>
                       <Link to="#">All Categories</Link>
                     </h6>
                     <span>80 Items</span>
                   </div>
-                  <div id="headphone" className='pos-slick-item'>
+                  <div id="headphone" className="pos-slick-item">
                     <Link to="#">
-                      <ImageWithBasePath src="assets/img/categories/category-02.png" alt="Categories" />
+                      <ImageWithBasePath
+                        src="assets/img/categories/category-02.png"
+                        alt="Categories"
+                      />
                     </Link>
                     <h6>
                       <Link to="#">Headphones</Link>
                     </h6>
                     <span>4 Items</span>
                   </div>
-                  <div id="shoe" className='pos-slick-item'>
+                  <div id="shoe" className="pos-slick-item">
                     <Link to="#">
-                      <ImageWithBasePath src="assets/img/categories/category-03.png" alt="Categories" />
+                      <ImageWithBasePath
+                        src="assets/img/categories/category-03.png"
+                        alt="Categories"
+                      />
                     </Link>
                     <h6>
                       <Link to="#">Shoes</Link>
                     </h6>
                     <span>14 Items</span>
                   </div>
-                  <div id="mobile" className='pos-slick-item'>
+                  <div id="mobile" className="pos-slick-item">
                     <Link to="#">
-                      <ImageWithBasePath src="assets/img/categories/category-04.png" alt="Categories" />
+                      <ImageWithBasePath
+                        src="assets/img/categories/category-04.png"
+                        alt="Categories"
+                      />
                     </Link>
                     <h6>
                       <Link to="#">Mobiles</Link>
                     </h6>
                     <span>7 Items</span>
                   </div>
-                  <div id="watche" className='pos-slick-item'>
+                  <div id="watche" className="pos-slick-item">
                     <Link to="#">
-                      <ImageWithBasePath src="assets/img/categories/category-05.png" alt="Categories" />
+                      <ImageWithBasePath
+                        src="assets/img/categories/category-05.png"
+                        alt="Categories"
+                      />
                     </Link>
                     <h6>
                       <Link to="#">Watches</Link>
                     </h6>
                     <span>16 Items</span>
                   </div>
-                  <div id="laptop" className='pos-slick-item'>
+                  <div id="laptop" className="pos-slick-item">
                     <Link to="#">
-                      <ImageWithBasePath src="assets/img/categories/category-06.png" alt="Categories" />
+                      <ImageWithBasePath
+                        src="assets/img/categories/category-06.png"
+                        alt="Categories"
+                      />
                     </Link>
                     <h6>
                       <Link to="#">Laptops</Link>
                     </h6>
                     <span>18 Items</span>
                   </div>
-                  </Slider>
+                </Slider>
                 <div className="pos-products">
                   <div className="d-flex align-items-center justify-content-between">
                     <h5 className="mb-3">Products</h5>
@@ -349,8 +395,7 @@ const Pos = () => {
                                 alt="Products"
                               />
                               <span>
-                         
-                                <Check className="feather-16"/>
+                                <Check className="feather-16" />
                               </span>
                             </Link>
                             <h6 className="cat-name">
@@ -373,7 +418,7 @@ const Pos = () => {
                                 alt="Products"
                               />
                               <span>
-                                <Check className="feather-16"/>
+                                <Check className="feather-16" />
                               </span>
                             </Link>
                             <h6 className="cat-name">
@@ -396,7 +441,7 @@ const Pos = () => {
                                 alt="Products"
                               />
                               <span>
-                                <Check className="feather-16"/>
+                                <Check className="feather-16" />
                               </span>
                             </Link>
                             <h6 className="cat-name">
@@ -419,7 +464,7 @@ const Pos = () => {
                                 alt="Products"
                               />
                               <span>
-                                <Check className="feather-16"/>
+                                <Check className="feather-16" />
                               </span>
                             </Link>
                             <h6 className="cat-name">
@@ -442,7 +487,7 @@ const Pos = () => {
                                 alt="Products"
                               />
                               <span>
-                                <Check className="feather-16"/>
+                                <Check className="feather-16" />
                               </span>
                             </Link>
                             <h6 className="cat-name">
@@ -465,7 +510,7 @@ const Pos = () => {
                                 alt="Products"
                               />
                               <span>
-                                <Check className="feather-16"/>
+                                <Check className="feather-16" />
                               </span>
                             </Link>
                             <h6 className="cat-name">
@@ -488,7 +533,7 @@ const Pos = () => {
                                 alt="Products"
                               />
                               <span>
-                                <Check className="feather-16"/>
+                                <Check className="feather-16" />
                               </span>
                             </Link>
                             <h6 className="cat-name">
@@ -511,7 +556,7 @@ const Pos = () => {
                                 alt="Products"
                               />
                               <span>
-                                <Check className="feather-16"/>
+                                <Check className="feather-16" />
                               </span>
                             </Link>
                             <h6 className="cat-name">
@@ -534,7 +579,7 @@ const Pos = () => {
                                 alt="Products"
                               />
                               <span>
-                                <Check className="feather-16"/>
+                                <Check className="feather-16" />
                               </span>
                             </Link>
                             <h6 className="cat-name">
@@ -557,7 +602,7 @@ const Pos = () => {
                                 alt="Products"
                               />
                               <span>
-                                <Check className="feather-16"/>
+                                <Check className="feather-16" />
                               </span>
                             </Link>
                             <h6 className="cat-name">
@@ -580,7 +625,7 @@ const Pos = () => {
                                 alt="Products"
                               />
                               <span>
-                                <Check className="feather-16"/>
+                                <Check className="feather-16" />
                               </span>
                             </Link>
                             <h6 className="cat-name">
@@ -603,7 +648,7 @@ const Pos = () => {
                                 alt="Products"
                               />
                               <span>
-                                <Check className="feather-16"/>
+                                <Check className="feather-16" />
                               </span>
                             </Link>
                             <h6 className="cat-name">
@@ -630,7 +675,7 @@ const Pos = () => {
                                 alt="Products"
                               />
                               <span>
-                                <Check className="feather-16"/>
+                                <Check className="feather-16" />
                               </span>
                             </Link>
                             <h6 className="cat-name">
@@ -653,7 +698,7 @@ const Pos = () => {
                                 alt="Products"
                               />
                               <span>
-                                <Check className="feather-16"/>
+                                <Check className="feather-16" />
                               </span>
                             </Link>
                             <h6 className="cat-name">
@@ -680,7 +725,7 @@ const Pos = () => {
                                 alt="Products"
                               />
                               <span>
-                                <Check className="feather-16"/>
+                                <Check className="feather-16" />
                               </span>
                             </Link>
                             <h6 className="cat-name">
@@ -703,7 +748,7 @@ const Pos = () => {
                                 alt="Products"
                               />
                               <span>
-                                <Check className="feather-16"/>
+                                <Check className="feather-16" />
                               </span>
                             </Link>
                             <h6 className="cat-name">
@@ -726,7 +771,7 @@ const Pos = () => {
                                 alt="Products"
                               />
                               <span>
-                                <Check className="feather-16"/>
+                                <Check className="feather-16" />
                               </span>
                             </Link>
                             <h6 className="cat-name">
@@ -753,7 +798,7 @@ const Pos = () => {
                                 alt="Products"
                               />
                               <span>
-                                <Check className="feather-16"/>
+                                <Check className="feather-16" />
                               </span>
                             </Link>
                             <h6 className="cat-name">
@@ -776,7 +821,7 @@ const Pos = () => {
                                 alt="Products"
                               />
                               <span>
-                                <Check className="feather-16"/>
+                                <Check className="feather-16" />
                               </span>
                             </Link>
                             <h6 className="cat-name">
@@ -803,7 +848,7 @@ const Pos = () => {
                                 alt="Products"
                               />
                               <span>
-                                <Check className="feather-16"/>
+                                <Check className="feather-16" />
                               </span>
                             </Link>
                             <h6 className="cat-name">
@@ -826,7 +871,7 @@ const Pos = () => {
                                 alt="Products"
                               />
                               <span>
-                                <Check className="feather-16"/>
+                                <Check className="feather-16" />
                               </span>
                             </Link>
                             <h6 className="cat-name">
@@ -849,7 +894,7 @@ const Pos = () => {
                                 alt="Products"
                               />
                               <span>
-                                <Check className="feather-16"/>
+                                <Check className="feather-16" />
                               </span>
                             </Link>
                             <h6 className="cat-name">
@@ -876,7 +921,7 @@ const Pos = () => {
                                 alt="Products"
                               />
                               <span>
-                                <Check className="feather-16"/>
+                                <Check className="feather-16" />
                               </span>
                             </Link>
                             <h6 className="cat-name">
@@ -899,7 +944,7 @@ const Pos = () => {
                                 alt="Products"
                               />
                               <span>
-                                <Check className="feather-16"/>
+                                <Check className="feather-16" />
                               </span>
                             </Link>
                             <h6 className="cat-name">
@@ -922,7 +967,7 @@ const Pos = () => {
                                 alt="Products"
                               />
                               <span>
-                                <Check className="feather-16"/>
+                                <Check className="feather-16" />
                               </span>
                             </Link>
                             <h6 className="cat-name">
@@ -945,7 +990,7 @@ const Pos = () => {
                                 alt="Products"
                               />
                               <span>
-                                <Check className="feather-16"/>
+                                <Check className="feather-16" />
                               </span>
                             </Link>
                             <h6 className="cat-name">
@@ -968,7 +1013,7 @@ const Pos = () => {
                                 alt="Products"
                               />
                               <span>
-                                <Check className="feather-16"/>
+                                <Check className="feather-16" />
                               </span>
                             </Link>
                             <h6 className="cat-name">
@@ -995,7 +1040,7 @@ const Pos = () => {
                                 alt="Products"
                               />
                               <span>
-                                <Check className="feather-16"/>
+                                <Check className="feather-16" />
                               </span>
                             </Link>
                             <h6 className="cat-name">
@@ -1018,7 +1063,7 @@ const Pos = () => {
                                 alt="Products"
                               />
                               <span>
-                                <Check className="feather-16"/>
+                                <Check className="feather-16" />
                               </span>
                             </Link>
                             <h6 className="cat-name">
@@ -1041,7 +1086,7 @@ const Pos = () => {
                                 alt="Products"
                               />
                               <span>
-                                <Check className="feather-16"/>
+                                <Check className="feather-16" />
                               </span>
                             </Link>
                             <h6 className="cat-name">
@@ -1064,7 +1109,7 @@ const Pos = () => {
                                 alt="Products"
                               />
                               <span>
-                                <Check className="feather-16"/>
+                                <Check className="feather-16" />
                               </span>
                             </Link>
                             <h6 className="cat-name">
@@ -1087,7 +1132,7 @@ const Pos = () => {
                                 alt="Products"
                               />
                               <span>
-                                <Check className="feather-16"/>
+                                <Check className="feather-16" />
                               </span>
                             </Link>
                             <h6 className="cat-name">
@@ -1110,7 +1155,7 @@ const Pos = () => {
                                 alt="Products"
                               />
                               <span>
-                                <Check className="feather-16"/>
+                                <Check className="feather-16" />
                               </span>
                             </Link>
                             <h6 className="cat-name">
@@ -1133,7 +1178,7 @@ const Pos = () => {
                                 alt="Products"
                               />
                               <span>
-                                <Check className="feather-16"/>
+                                <Check className="feather-16" />
                               </span>
                             </Link>
                             <h6 className="cat-name">
@@ -1156,7 +1201,7 @@ const Pos = () => {
                                 alt="Products"
                               />
                               <span>
-                                <Check className="feather-16"/>
+                                <Check className="feather-16" />
                               </span>
                             </Link>
                             <h6 className="cat-name">
@@ -1179,7 +1224,7 @@ const Pos = () => {
                                 alt="Products"
                               />
                               <span>
-                                <Check className="feather-16"/>
+                                <Check className="feather-16" />
                               </span>
                             </Link>
                             <h6 className="cat-name">
@@ -1202,7 +1247,7 @@ const Pos = () => {
                                 alt="Products"
                               />
                               <span>
-                                <Check className="feather-16"/>
+                                <Check className="feather-16" />
                               </span>
                             </Link>
                             <h6 className="cat-name">
@@ -1225,7 +1270,7 @@ const Pos = () => {
                                 alt="Products"
                               />
                               <span>
-                                <Check className="feather-16"/>
+                                <Check className="feather-16" />
                               </span>
                             </Link>
                             <h6 className="cat-name">
@@ -1248,7 +1293,7 @@ const Pos = () => {
                                 alt="Products"
                               />
                               <span>
-                                <Check className="feather-16"/>
+                                <Check className="feather-16" />
                               </span>
                             </Link>
                             <h6 className="cat-name">
@@ -1275,7 +1320,7 @@ const Pos = () => {
                                 alt="Products"
                               />
                               <span>
-                                <Check className="feather-16"/>
+                                <Check className="feather-16" />
                               </span>
                             </Link>
                             <h6 className="cat-name">
@@ -1298,7 +1343,7 @@ const Pos = () => {
                                 alt="Products"
                               />
                               <span>
-                                <Check className="feather-16"/>
+                                <Check className="feather-16" />
                               </span>
                             </Link>
                             <h6 className="cat-name">
@@ -1325,7 +1370,7 @@ const Pos = () => {
                                 alt="Products"
                               />
                               <span>
-                                <Check className="feather-16"/>
+                                <Check className="feather-16" />
                               </span>
                             </Link>
                             <h6 className="cat-name">
@@ -1348,7 +1393,7 @@ const Pos = () => {
                                 alt="Products"
                               />
                               <span>
-                                <Check className="feather-16"/>
+                                <Check className="feather-16" />
                               </span>
                             </Link>
                             <h6 className="cat-name">
@@ -1371,7 +1416,7 @@ const Pos = () => {
                                 alt="Products"
                               />
                               <span>
-                                <Check className="feather-16"/>
+                                <Check className="feather-16" />
                               </span>
                             </Link>
                             <h6 className="cat-name">
@@ -1398,7 +1443,7 @@ const Pos = () => {
                                 alt="Products"
                               />
                               <span>
-                                <Check className="feather-16"/>
+                                <Check className="feather-16" />
                               </span>
                             </Link>
                             <h6 className="cat-name">
@@ -1421,7 +1466,7 @@ const Pos = () => {
                                 alt="Products"
                               />
                               <span>
-                                <Check className="feather-16"/>
+                                <Check className="feather-16" />
                               </span>
                             </Link>
                             <h6 className="cat-name">
@@ -1448,7 +1493,7 @@ const Pos = () => {
                                 alt="Products"
                               />
                               <span>
-                                <Check className="feather-16"/>
+                                <Check className="feather-16" />
                               </span>
                             </Link>
                             <h6 className="cat-name">
@@ -1471,7 +1516,7 @@ const Pos = () => {
                                 alt="Products"
                               />
                               <span>
-                                <Check className="feather-16"/>
+                                <Check className="feather-16" />
                               </span>
                             </Link>
                             <h6 className="cat-name">
@@ -1494,7 +1539,7 @@ const Pos = () => {
                                 alt="Products"
                               />
                               <span>
-                                <Check className="feather-16"/>
+                                <Check className="feather-16" />
                               </span>
                             </Link>
                             <h6 className="cat-name">
@@ -1521,7 +1566,7 @@ const Pos = () => {
                                 alt="Products"
                               />
                               <span>
-                                <Check className="feather-16"/>
+                                <Check className="feather-16" />
                               </span>
                             </Link>
                             <h6 className="cat-name">
@@ -1544,7 +1589,7 @@ const Pos = () => {
                                 alt="Products"
                               />
                               <span>
-                                <Check className="feather-16"/>
+                                <Check className="feather-16" />
                               </span>
                             </Link>
                             <h6 className="cat-name">
@@ -1567,7 +1612,7 @@ const Pos = () => {
                                 alt="Products"
                               />
                               <span>
-                                <Check className="feather-16"/>
+                                <Check className="feather-16" />
                               </span>
                             </Link>
                             <h6 className="cat-name">
@@ -1590,7 +1635,7 @@ const Pos = () => {
                                 alt="Products"
                               />
                               <span>
-                                <Check className="feather-16"/>
+                                <Check className="feather-16" />
                               </span>
                             </Link>
                             <h6 className="cat-name">
@@ -1613,7 +1658,7 @@ const Pos = () => {
                                 alt="Products"
                               />
                               <span>
-                                <Check className="feather-16"/>
+                                <Check className="feather-16" />
                               </span>
                             </Link>
                             <h6 className="cat-name">
@@ -1739,7 +1784,8 @@ const Pos = () => {
                           overlay={<Tooltip id="tooltip-plus">Plus</Tooltip>}
                         >
                           <Link
-                            to="#" onClick={handleIncrement}
+                            to="#"
+                            onClick={handleIncrement}
                             className="inc d-flex justify-content-center align-items-center"
                             data-bs-toggle="tooltip"
                             data-bs-placement="top"
@@ -1758,7 +1804,8 @@ const Pos = () => {
                         >
                           <Edit className="feather-14" />
                         </Link>
-                        <Link onClick={showConfirmationAlert}
+                        <Link
+                          onClick={showConfirmationAlert}
                           className="btn-icon delete-icon confirm-text"
                           to="#"
                         >
@@ -1830,7 +1877,8 @@ const Pos = () => {
                         >
                           <Edit className="feather-14" />
                         </Link>
-                        <Link onClick={showConfirmationAlert}
+                        <Link
+                          onClick={showConfirmationAlert}
                           className="btn-icon delete-icon confirm-text"
                           to="#"
                         >
@@ -1904,7 +1952,11 @@ const Pos = () => {
                         >
                           <Edit className="feather-14" />
                         </Link>
-                        <Link className="btn-icon delete-icon confirm-text" to="#" onClick={showConfirmationAlert}>
+                        <Link
+                          className="btn-icon delete-icon confirm-text"
+                          to="#"
+                          onClick={showConfirmationAlert}
+                        >
                           <Trash2 className="feather-14" />
                         </Link>
                       </div>
@@ -1976,8 +2028,12 @@ const Pos = () => {
                           <i data-feather="edit" className="feather-14" />
                           <Edit className="feather-14" />
                         </Link>
-                        <Link className="btn-icon delete-icon confirm-text" to="#" onClick={showConfirmationAlert}>
-                          <Trash2 className='feather-14' />
+                        <Link
+                          className="btn-icon delete-icon confirm-text"
+                          to="#"
+                          onClick={showConfirmationAlert}
+                        >
+                          <Trash2 className="feather-14" />
                         </Link>
                       </div>
                     </div>
@@ -1994,7 +2050,6 @@ const Pos = () => {
                             options={gst}
                             placeholder="GST 5%"
                           />
-
                         </div>
                       </div>
                       <div className="col-12 col-sm-4">
@@ -2105,10 +2160,7 @@ const Pos = () => {
                     </span>
                     Hold
                   </Link>
-                  <Link
-                    to="#"
-                    className="btn btn-danger btn-icon flex-fill"
-                  >
+                  <Link to="#" className="btn btn-danger btn-icon flex-fill">
                     <span className="me-1 d-flex align-items-center">
                       <i data-feather="trash-2" className="feather-16" />
                     </span>
@@ -2192,7 +2244,7 @@ const Pos = () => {
               <div className="icon-head text-center">
                 <Link to="#">
                   <ImageWithBasePath
-                    src="assets/img/logo.png"
+                    src="assets/img/logo.svg"
                     width={100}
                     height={30}
                     alt="Receipt Logo"
@@ -2203,7 +2255,8 @@ const Pos = () => {
                 <h6>Dreamguys Technologies Pvt Ltd.,</h6>
                 <p className="mb-0">Phone Number: +1 5656665656</p>
                 <p className="mb-0">
-                  Email: <Link to="mailto:example@gmail.com">example@gmail.com</Link>
+                  Email:{" "}
+                  <Link to="mailto:example@gmail.com">example@gmail.com</Link>
                 </p>
               </div>
               <div className="tax-invoice">
@@ -2303,7 +2356,10 @@ const Pos = () => {
                   registration. Thank you for your business!
                 </p>
                 <Link to="#">
-                  <ImageWithBasePath src="assets/img/barcode/barcode-03.jpg" alt="Barcode" />
+                  <ImageWithBasePath
+                    src="assets/img/barcode/barcode-03.jpg"
+                    alt="Barcode"
+                  />
                 </Link>
                 <p>Sale 31</p>
                 <p>Thank You For Shopping With Us. Please Come Again</p>
@@ -2550,9 +2606,9 @@ const Pos = () => {
                   />
                 </div>
                 <p>
-                  The current order will be set on hold. You can retreive this order
-                  from the pending order button. Providing a reference to it might
-                  help you to identify the order more quickly.
+                  The current order will be set on hold. You can retreive this
+                  order from the pending order button. Providing a reference to
+                  it might help you to identify the order more quickly.
                 </p>
                 <div className="modal-footer d-sm-flex justify-content-end">
                   <button
@@ -2758,31 +2814,57 @@ const Pos = () => {
                             className="form-control form-control-sm formsearch"
                           />
                           <Link to className="btn btn-searchset">
-                            <i data-feather="search" className="feather-search" />
+                            <i
+                              data-feather="search"
+                              className="feather-search"
+                            />
                           </Link>
                         </div>
                       </div>
                       <div className="wordset">
                         <ul>
                           <li>
-                            <OverlayTrigger placement="top" overlay={renderTooltip}>
+                            <OverlayTrigger
+                              placement="top"
+                              overlay={renderTooltip}
+                            >
                               <Link>
-                                <ImageWithBasePath src="assets/img/icons/pdf.svg" alt="img" />
+                                <ImageWithBasePath
+                                  src="assets/img/icons/pdf.svg"
+                                  alt="img"
+                                />
                               </Link>
                             </OverlayTrigger>
                           </li>
                           <li>
-                            <OverlayTrigger placement="top" overlay={renderExcelTooltip}>
-                              <Link data-bs-toggle="tooltip" data-bs-placement="top">
-                                <ImageWithBasePath src="assets/img/icons/excel.svg" alt="img" />
+                            <OverlayTrigger
+                              placement="top"
+                              overlay={renderExcelTooltip}
+                            >
+                              <Link
+                                data-bs-toggle="tooltip"
+                                data-bs-placement="top"
+                              >
+                                <ImageWithBasePath
+                                  src="assets/img/icons/excel.svg"
+                                  alt="img"
+                                />
                               </Link>
                             </OverlayTrigger>
                           </li>
                           <li>
-                            <OverlayTrigger placement="top" overlay={renderPrinterTooltip}>
-
-                              <Link data-bs-toggle="tooltip" data-bs-placement="top">
-                                <i data-feather="printer" className="feather-printer" />
+                            <OverlayTrigger
+                              placement="top"
+                              overlay={renderPrinterTooltip}
+                            >
+                              <Link
+                                data-bs-toggle="tooltip"
+                                data-bs-placement="top"
+                              >
+                                <i
+                                  data-feather="printer"
+                                  className="feather-printer"
+                                />
                               </Link>
                             </OverlayTrigger>
                           </li>
@@ -2809,12 +2891,19 @@ const Pos = () => {
                             <td className="action-table-data">
                               <div className="edit-delete-action">
                                 <Link className="me-2 p-2" to="#">
-                                  <i data-feather="eye" className="feather-eye" />
+                                  <i
+                                    data-feather="eye"
+                                    className="feather-eye"
+                                  />
                                 </Link>
                                 <Link className="me-2 p-2" to="#">
-                                  <i data-feather="edit" className="feather-edit" />
+                                  <i
+                                    data-feather="edit"
+                                    className="feather-edit"
+                                  />
                                 </Link>
-                                <Link onClick={showConfirmationAlert}
+                                <Link
+                                  onClick={showConfirmationAlert}
                                   className="p-2 confirm-text"
                                   to="#"
                                 >
@@ -2834,12 +2923,19 @@ const Pos = () => {
                             <td className="action-table-data">
                               <div className="edit-delete-action">
                                 <Link className="me-2 p-2" to="#">
-                                  <i data-feather="eye" className="feather-eye" />
+                                  <i
+                                    data-feather="eye"
+                                    className="feather-eye"
+                                  />
                                 </Link>
                                 <Link className="me-2 p-2" to="#">
-                                  <i data-feather="edit" className="feather-edit" />
+                                  <i
+                                    data-feather="edit"
+                                    className="feather-edit"
+                                  />
                                 </Link>
-                                <Link onClick={showConfirmationAlert}
+                                <Link
+                                  onClick={showConfirmationAlert}
                                   className="p-2 confirm-text"
                                   to="#"
                                 >
@@ -2859,12 +2955,19 @@ const Pos = () => {
                             <td className="action-table-data">
                               <div className="edit-delete-action">
                                 <Link className="me-2 p-2" to="#">
-                                  <i data-feather="eye" className="feather-eye" />
+                                  <i
+                                    data-feather="eye"
+                                    className="feather-eye"
+                                  />
                                 </Link>
                                 <Link className="me-2 p-2" to="#">
-                                  <i data-feather="edit" className="feather-edit" />
+                                  <i
+                                    data-feather="edit"
+                                    className="feather-edit"
+                                  />
                                 </Link>
-                                <Link onClick={showConfirmationAlert}
+                                <Link
+                                  onClick={showConfirmationAlert}
                                   className="p-2 confirm-text"
                                   to="#"
                                 >
@@ -2884,12 +2987,19 @@ const Pos = () => {
                             <td className="action-table-data">
                               <div className="edit-delete-action">
                                 <Link className="me-2 p-2" to="#">
-                                  <i data-feather="eye" className="feather-eye" />
+                                  <i
+                                    data-feather="eye"
+                                    className="feather-eye"
+                                  />
                                 </Link>
                                 <Link className="me-2 p-2" to="#">
-                                  <i data-feather="edit" className="feather-edit" />
+                                  <i
+                                    data-feather="edit"
+                                    className="feather-edit"
+                                  />
                                 </Link>
-                                <Link onClick={showConfirmationAlert}
+                                <Link
+                                  onClick={showConfirmationAlert}
                                   className="p-2 confirm-text"
                                   to="#"
                                 >
@@ -2909,12 +3019,19 @@ const Pos = () => {
                             <td className="action-table-data">
                               <div className="edit-delete-action">
                                 <Link className="me-2 p-2" to="#">
-                                  <i data-feather="eye" className="feather-eye" />
+                                  <i
+                                    data-feather="eye"
+                                    className="feather-eye"
+                                  />
                                 </Link>
                                 <Link className="me-2 p-2" to="#">
-                                  <i data-feather="edit" className="feather-edit" />
+                                  <i
+                                    data-feather="edit"
+                                    className="feather-edit"
+                                  />
                                 </Link>
-                                <Link onClick={showConfirmationAlert}
+                                <Link
+                                  onClick={showConfirmationAlert}
                                   className="p-2 confirm-text"
                                   to="#"
                                 >
@@ -2934,12 +3051,19 @@ const Pos = () => {
                             <td className="action-table-data">
                               <div className="edit-delete-action">
                                 <Link className="me-2 p-2" to="#">
-                                  <i data-feather="eye" className="feather-eye" />
+                                  <i
+                                    data-feather="eye"
+                                    className="feather-eye"
+                                  />
                                 </Link>
                                 <Link className="me-2 p-2" to="#">
-                                  <i data-feather="edit" className="feather-edit" />
+                                  <i
+                                    data-feather="edit"
+                                    className="feather-edit"
+                                  />
                                 </Link>
-                                <Link onClick={showConfirmationAlert}
+                                <Link
+                                  onClick={showConfirmationAlert}
                                   className="p-2 confirm-text"
                                   to="#"
                                 >
@@ -2959,12 +3083,19 @@ const Pos = () => {
                             <td className="action-table-data">
                               <div className="edit-delete-action">
                                 <Link className="me-2 p-2" to="#">
-                                  <i data-feather="eye" className="feather-eye" />
+                                  <i
+                                    data-feather="eye"
+                                    className="feather-eye"
+                                  />
                                 </Link>
                                 <Link className="me-2 p-2" to="#">
-                                  <i data-feather="edit" className="feather-edit" />
+                                  <i
+                                    data-feather="edit"
+                                    className="feather-edit"
+                                  />
                                 </Link>
-                                <Link onClick={showConfirmationAlert}
+                                <Link
+                                  onClick={showConfirmationAlert}
                                   className="p-2 confirm-text"
                                   to="#"
                                 >
@@ -2990,31 +3121,57 @@ const Pos = () => {
                             className="form-control form-control-sm formsearch"
                           />
                           <Link to className="btn btn-searchset">
-                            <i data-feather="search" className="feather-search" />
+                            <i
+                              data-feather="search"
+                              className="feather-search"
+                            />
                           </Link>
                         </div>
                       </div>
                       <div className="wordset">
                         <ul>
                           <li>
-                            <OverlayTrigger placement="top" overlay={renderTooltip}>
+                            <OverlayTrigger
+                              placement="top"
+                              overlay={renderTooltip}
+                            >
                               <Link>
-                                <ImageWithBasePath src="assets/img/icons/pdf.svg" alt="img" />
+                                <ImageWithBasePath
+                                  src="assets/img/icons/pdf.svg"
+                                  alt="img"
+                                />
                               </Link>
                             </OverlayTrigger>
                           </li>
                           <li>
-                            <OverlayTrigger placement="top" overlay={renderExcelTooltip}>
-                              <Link data-bs-toggle="tooltip" data-bs-placement="top">
-                                <ImageWithBasePath src="assets/img/icons/excel.svg" alt="img" />
+                            <OverlayTrigger
+                              placement="top"
+                              overlay={renderExcelTooltip}
+                            >
+                              <Link
+                                data-bs-toggle="tooltip"
+                                data-bs-placement="top"
+                              >
+                                <ImageWithBasePath
+                                  src="assets/img/icons/excel.svg"
+                                  alt="img"
+                                />
                               </Link>
                             </OverlayTrigger>
                           </li>
                           <li>
-                            <OverlayTrigger placement="top" overlay={renderPrinterTooltip}>
-
-                              <Link data-bs-toggle="tooltip" data-bs-placement="top">
-                                <i data-feather="printer" className="feather-printer" />
+                            <OverlayTrigger
+                              placement="top"
+                              overlay={renderPrinterTooltip}
+                            >
+                              <Link
+                                data-bs-toggle="tooltip"
+                                data-bs-placement="top"
+                              >
+                                <i
+                                  data-feather="printer"
+                                  className="feather-printer"
+                                />
                               </Link>
                             </OverlayTrigger>
                           </li>
@@ -3041,12 +3198,19 @@ const Pos = () => {
                             <td className="action-table-data">
                               <div className="edit-delete-action">
                                 <Link className="me-2 p-2" to="#">
-                                  <i data-feather="eye" className="feather-eye" />
+                                  <i
+                                    data-feather="eye"
+                                    className="feather-eye"
+                                  />
                                 </Link>
                                 <Link className="me-2 p-2" to="#">
-                                  <i data-feather="edit" className="feather-edit" />
+                                  <i
+                                    data-feather="edit"
+                                    className="feather-edit"
+                                  />
                                 </Link>
-                                <Link onClick={showConfirmationAlert}
+                                <Link
+                                  onClick={showConfirmationAlert}
                                   className="p-2 confirm-text"
                                   to="#"
                                 >
@@ -3066,12 +3230,19 @@ const Pos = () => {
                             <td className="action-table-data">
                               <div className="edit-delete-action">
                                 <Link className="me-2 p-2" to="#">
-                                  <i data-feather="eye" className="feather-eye" />
+                                  <i
+                                    data-feather="eye"
+                                    className="feather-eye"
+                                  />
                                 </Link>
                                 <Link className="me-2 p-2" to="#">
-                                  <i data-feather="edit" className="feather-edit" />
+                                  <i
+                                    data-feather="edit"
+                                    className="feather-edit"
+                                  />
                                 </Link>
-                                <Link onClick={showConfirmationAlert}
+                                <Link
+                                  onClick={showConfirmationAlert}
                                   className="p-2 confirm-text"
                                   to="#"
                                 >
@@ -3091,12 +3262,19 @@ const Pos = () => {
                             <td className="action-table-data">
                               <div className="edit-delete-action">
                                 <Link className="me-2 p-2" to="#">
-                                  <i data-feather="eye" className="feather-eye" />
+                                  <i
+                                    data-feather="eye"
+                                    className="feather-eye"
+                                  />
                                 </Link>
                                 <Link className="me-2 p-2" to="#">
-                                  <i data-feather="edit" className="feather-edit" />
+                                  <i
+                                    data-feather="edit"
+                                    className="feather-edit"
+                                  />
                                 </Link>
-                                <Link onClick={showConfirmationAlert}
+                                <Link
+                                  onClick={showConfirmationAlert}
                                   className="p-2 confirm-text"
                                   to="#"
                                 >
@@ -3116,12 +3294,19 @@ const Pos = () => {
                             <td className="action-table-data">
                               <div className="edit-delete-action">
                                 <Link className="me-2 p-2" to="#">
-                                  <i data-feather="eye" className="feather-eye" />
+                                  <i
+                                    data-feather="eye"
+                                    className="feather-eye"
+                                  />
                                 </Link>
                                 <Link className="me-2 p-2" to="#">
-                                  <i data-feather="edit" className="feather-edit" />
+                                  <i
+                                    data-feather="edit"
+                                    className="feather-edit"
+                                  />
                                 </Link>
-                                <Link onClick={showConfirmationAlert}
+                                <Link
+                                  onClick={showConfirmationAlert}
                                   className="p-2 confirm-text"
                                   to="#"
                                 >
@@ -3141,12 +3326,19 @@ const Pos = () => {
                             <td className="action-table-data">
                               <div className="edit-delete-action">
                                 <Link className="me-2 p-2" to="#">
-                                  <i data-feather="eye" className="feather-eye" />
+                                  <i
+                                    data-feather="eye"
+                                    className="feather-eye"
+                                  />
                                 </Link>
                                 <Link className="me-2 p-2" to="#">
-                                  <i data-feather="edit" className="feather-edit" />
+                                  <i
+                                    data-feather="edit"
+                                    className="feather-edit"
+                                  />
                                 </Link>
-                                <Link onClick={showConfirmationAlert}
+                                <Link
+                                  onClick={showConfirmationAlert}
                                   className="p-2 confirm-text"
                                   to="#"
                                 >
@@ -3166,12 +3358,19 @@ const Pos = () => {
                             <td className="action-table-data">
                               <div className="edit-delete-action">
                                 <Link className="me-2 p-2" to="#">
-                                  <i data-feather="eye" className="feather-eye" />
+                                  <i
+                                    data-feather="eye"
+                                    className="feather-eye"
+                                  />
                                 </Link>
                                 <Link className="me-2 p-2" to="#">
-                                  <i data-feather="edit" className="feather-edit" />
+                                  <i
+                                    data-feather="edit"
+                                    className="feather-edit"
+                                  />
                                 </Link>
-                                <Link onClick={showConfirmationAlert}
+                                <Link
+                                  onClick={showConfirmationAlert}
                                   className="p-2 confirm-text"
                                   to="#"
                                 >
@@ -3191,12 +3390,19 @@ const Pos = () => {
                             <td className="action-table-data">
                               <div className="edit-delete-action">
                                 <Link className="me-2 p-2" to="#">
-                                  <i data-feather="eye" className="feather-eye" />
+                                  <i
+                                    data-feather="eye"
+                                    className="feather-eye"
+                                  />
                                 </Link>
                                 <Link className="me-2 p-2" to="#">
-                                  <i data-feather="edit" className="feather-edit" />
+                                  <i
+                                    data-feather="edit"
+                                    className="feather-edit"
+                                  />
                                 </Link>
-                                <Link onClick={showConfirmationAlert}
+                                <Link
+                                  onClick={showConfirmationAlert}
                                   className="p-2 confirm-text"
                                   to="#"
                                 >
@@ -3222,31 +3428,57 @@ const Pos = () => {
                             className="form-control form-control-sm formsearch"
                           />
                           <Link to className="btn btn-searchset">
-                            <i data-feather="search" className="feather-search" />
+                            <i
+                              data-feather="search"
+                              className="feather-search"
+                            />
                           </Link>
                         </div>
                       </div>
                       <div className="wordset">
                         <ul>
                           <li>
-                            <OverlayTrigger placement="top" overlay={renderTooltip}>
+                            <OverlayTrigger
+                              placement="top"
+                              overlay={renderTooltip}
+                            >
                               <Link>
-                                <ImageWithBasePath src="assets/img/icons/pdf.svg" alt="img" />
+                                <ImageWithBasePath
+                                  src="assets/img/icons/pdf.svg"
+                                  alt="img"
+                                />
                               </Link>
                             </OverlayTrigger>
                           </li>
                           <li>
-                            <OverlayTrigger placement="top" overlay={renderExcelTooltip}>
-                              <Link data-bs-toggle="tooltip" data-bs-placement="top">
-                                <ImageWithBasePath src="assets/img/icons/excel.svg" alt="img" />
+                            <OverlayTrigger
+                              placement="top"
+                              overlay={renderExcelTooltip}
+                            >
+                              <Link
+                                data-bs-toggle="tooltip"
+                                data-bs-placement="top"
+                              >
+                                <ImageWithBasePath
+                                  src="assets/img/icons/excel.svg"
+                                  alt="img"
+                                />
                               </Link>
                             </OverlayTrigger>
                           </li>
                           <li>
-                            <OverlayTrigger placement="top" overlay={renderPrinterTooltip}>
-
-                              <Link data-bs-toggle="tooltip" data-bs-placement="top">
-                                <i data-feather="printer" className="feather-printer" />
+                            <OverlayTrigger
+                              placement="top"
+                              overlay={renderPrinterTooltip}
+                            >
+                              <Link
+                                data-bs-toggle="tooltip"
+                                data-bs-placement="top"
+                              >
+                                <i
+                                  data-feather="printer"
+                                  className="feather-printer"
+                                />
                               </Link>
                             </OverlayTrigger>
                           </li>
@@ -3273,12 +3505,19 @@ const Pos = () => {
                             <td className="action-table-data">
                               <div className="edit-delete-action">
                                 <Link className="me-2 p-2" to="#">
-                                  <i data-feather="eye" className="feather-eye" />
+                                  <i
+                                    data-feather="eye"
+                                    className="feather-eye"
+                                  />
                                 </Link>
                                 <Link className="me-2 p-2" to="#">
-                                  <i data-feather="edit" className="feather-edit" />
+                                  <i
+                                    data-feather="edit"
+                                    className="feather-edit"
+                                  />
                                 </Link>
-                                <Link onClick={showConfirmationAlert}
+                                <Link
+                                  onClick={showConfirmationAlert}
                                   className="p-2 confirm-text"
                                   to="#"
                                 >
@@ -3298,12 +3537,19 @@ const Pos = () => {
                             <td className="action-table-data">
                               <div className="edit-delete-action">
                                 <Link className="me-2 p-2" to="#">
-                                  <i data-feather="eye" className="feather-eye" />
+                                  <i
+                                    data-feather="eye"
+                                    className="feather-eye"
+                                  />
                                 </Link>
                                 <Link className="me-2 p-2" to="#">
-                                  <i data-feather="edit" className="feather-edit" />
+                                  <i
+                                    data-feather="edit"
+                                    className="feather-edit"
+                                  />
                                 </Link>
-                                <Link onClick={showConfirmationAlert}
+                                <Link
+                                  onClick={showConfirmationAlert}
                                   className="p-2 confirm-text"
                                   to="#"
                                 >
@@ -3323,12 +3569,19 @@ const Pos = () => {
                             <td className="action-table-data">
                               <div className="edit-delete-action">
                                 <Link className="me-2 p-2" to="#">
-                                  <i data-feather="eye" className="feather-eye" />
+                                  <i
+                                    data-feather="eye"
+                                    className="feather-eye"
+                                  />
                                 </Link>
                                 <Link className="me-2 p-2" to="#">
-                                  <i data-feather="edit" className="feather-edit" />
+                                  <i
+                                    data-feather="edit"
+                                    className="feather-edit"
+                                  />
                                 </Link>
-                                <Link onClick={showConfirmationAlert}
+                                <Link
+                                  onClick={showConfirmationAlert}
                                   className="p-2 confirm-text"
                                   to="#"
                                 >
@@ -3348,12 +3601,19 @@ const Pos = () => {
                             <td className="action-table-data">
                               <div className="edit-delete-action">
                                 <Link className="me-2 p-2" to="#">
-                                  <i data-feather="eye" className="feather-eye" />
+                                  <i
+                                    data-feather="eye"
+                                    className="feather-eye"
+                                  />
                                 </Link>
                                 <Link className="me-2 p-2" to="#">
-                                  <i data-feather="edit" className="feather-edit" />
+                                  <i
+                                    data-feather="edit"
+                                    className="feather-edit"
+                                  />
                                 </Link>
-                                <Link onClick={showConfirmationAlert}
+                                <Link
+                                  onClick={showConfirmationAlert}
                                   className="p-2 confirm-text"
                                   to="#"
                                 >
@@ -3373,12 +3633,19 @@ const Pos = () => {
                             <td className="action-table-data">
                               <div className="edit-delete-action">
                                 <Link className="me-2 p-2" to="#">
-                                  <i data-feather="eye" className="feather-eye" />
+                                  <i
+                                    data-feather="eye"
+                                    className="feather-eye"
+                                  />
                                 </Link>
                                 <Link className="me-2 p-2" to="#">
-                                  <i data-feather="edit" className="feather-edit" />
+                                  <i
+                                    data-feather="edit"
+                                    className="feather-edit"
+                                  />
                                 </Link>
-                                <Link onClick={showConfirmationAlert}
+                                <Link
+                                  onClick={showConfirmationAlert}
                                   className="p-2 confirm-text"
                                   to="#"
                                 >
@@ -3398,12 +3665,19 @@ const Pos = () => {
                             <td className="action-table-data">
                               <div className="edit-delete-action">
                                 <Link className="me-2 p-2" to="#">
-                                  <i data-feather="eye" className="feather-eye" />
+                                  <i
+                                    data-feather="eye"
+                                    className="feather-eye"
+                                  />
                                 </Link>
                                 <Link className="me-2 p-2" to="#">
-                                  <i data-feather="edit" className="feather-edit" />
+                                  <i
+                                    data-feather="edit"
+                                    className="feather-edit"
+                                  />
                                 </Link>
-                                <Link onClick={showConfirmationAlert}
+                                <Link
+                                  onClick={showConfirmationAlert}
                                   className="p-2 confirm-text"
                                   to="#"
                                 >
@@ -3423,12 +3697,19 @@ const Pos = () => {
                             <td className="action-table-data">
                               <div className="edit-delete-action">
                                 <Link className="me-2 p-2" to="#">
-                                  <i data-feather="eye" className="feather-eye" />
+                                  <i
+                                    data-feather="eye"
+                                    className="feather-eye"
+                                  />
                                 </Link>
                                 <Link className="me-2 p-2" to="#">
-                                  <i data-feather="edit" className="feather-edit" />
+                                  <i
+                                    data-feather="edit"
+                                    className="feather-edit"
+                                  />
                                 </Link>
-                                <Link onClick={showConfirmationAlert}
+                                <Link
+                                  onClick={showConfirmationAlert}
                                   className="p-2 confirm-text"
                                   to="#"
                                 >
@@ -3451,7 +3732,6 @@ const Pos = () => {
         </div>
       </div>
       {/* /Recent Transactions */}
-
 
       {/* Recent Transactions */}
       <div
@@ -3538,7 +3818,10 @@ const Pos = () => {
                             className="form-control form-control-sm formsearch w-100"
                           />
                           <Link to className="btn btn-searchset">
-                            <i data-feather="search" className="feather-search" />
+                            <i
+                              data-feather="search"
+                              className="feather-search"
+                            />
                           </Link>
                         </div>
                       </div>
@@ -3742,7 +4025,10 @@ const Pos = () => {
                             className="form-control form-control-sm formsearch w-100"
                           />
                           <Link to className="btn btn-searchset">
-                            <i data-feather="search" className="feather-search" />
+                            <i
+                              data-feather="search"
+                              className="feather-search"
+                            />
                           </Link>
                         </div>
                       </div>
@@ -3946,7 +4232,10 @@ const Pos = () => {
                             className="form-control form-control-sm formsearch w-100"
                           />
                           <Link to className="btn btn-searchset">
-                            <i data-feather="search" className="feather-search" />
+                            <i
+                              data-feather="search"
+                              className="feather-search"
+                            />
                           </Link>
                         </div>
                       </div>
@@ -4147,10 +4436,8 @@ const Pos = () => {
         </div>
       </div>
       {/* /Recent Transactions */}
-
-
     </div>
-  )
-}
+  );
+};
 
-export default Pos
+export default Pos;
